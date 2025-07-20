@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod/v3";
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class, @typescript-eslint/no-unused-vars, unused-imports/no-unused-vars
 declare abstract class Class {

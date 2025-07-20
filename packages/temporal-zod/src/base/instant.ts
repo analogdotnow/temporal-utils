@@ -1,5 +1,5 @@
 import { Temporal } from "temporal-polyfill";
-import { z } from "zod";
+import { z } from "zod/v3";
 
 import { temporalValidators } from "./temporalValidator.js";
 
