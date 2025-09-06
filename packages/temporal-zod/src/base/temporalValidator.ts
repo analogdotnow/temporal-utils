@@ -12,11 +12,7 @@ export type ZodTemporal<
   TClass extends typeof Class & {
     from: (arg: string) => InstanceType<TClass>;
   },
-> = z.ZodType<
-  InstanceType<TClass>,
-  z.ZodTypeDef,
-  InstanceType<TClass> | string
->;
+> = z.ZodType<InstanceType<TClass>>;
 
 /**
  * Creates Zod validators for a Temporal class.
@@ -40,9 +36,10 @@ export function temporalValidators<
         try {
           return cls.from(value);
         } catch (error: unknown) {
-          ctx.addIssue({
-            code: z.ZodIssueCode.invalid_date,
+          ctx.issues.push({
+            code: "custom",
             message: `Invalid ${cls.name}: ${(error as { message?: string }).message ?? "unknown error"}`,
+            input: value,
           });
           return z.NEVER;
         }
