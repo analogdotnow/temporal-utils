@@ -18,5 +18,7 @@ export const zPlainDateTime: ZodTemporal<typeof PlainDateTime> =
 /**
  * Validates that the value is an instance of {@link Temporal.PlainDateTime}.
  */
-export const zPlainDateTimeInstance: z.ZodType<Temporal.PlainDateTime> =
-  validators.instance;
+export const zPlainDateTimeInstance: z.ZodType<
+  Temporal.PlainDateTime,
+  Temporal.PlainDateTime
+> = validators.instance;

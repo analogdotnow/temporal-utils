@@ -18,5 +18,7 @@ export const zPlainMonthDay: ZodTemporal<typeof PlainMonthDay> =
 /**
  * Validates that the value is an instance of {@link Temporal.PlainMonthDay}.
  */
-export const zPlainMonthDayInstance: z.ZodType<Temporal.PlainMonthDay> =
-  validators.instance;
+export const zPlainMonthDayInstance: z.ZodType<
+  Temporal.PlainMonthDay,
+  Temporal.PlainMonthDay
+> = validators.instance;

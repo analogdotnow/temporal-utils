@@ -22,5 +22,5 @@ export const zInstant = z.union([
 /**
  * Validates that the value is an instance of {@link Temporal.Instant}.
  */
-export const zInstantInstance: z.ZodType<Temporal.Instant> =
+export const zInstantInstance: z.ZodType<Temporal.Instant, Temporal.Instant> =
   validators.instance;

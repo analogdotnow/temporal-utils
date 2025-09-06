@@ -18,5 +18,7 @@ export const zZonedDateTime: ZodTemporal<typeof ZonedDateTime> =
 /**
  * Validates that the value is an instance of {@link Temporal.ZonedDateTime}.
  */
-export const zZonedDateTimeInstance: z.ZodType<Temporal.ZonedDateTime> =
-  validators.instance;
+export const zZonedDateTimeInstance: z.ZodType<
+  Temporal.ZonedDateTime,
+  Temporal.ZonedDateTime
+> = validators.instance;

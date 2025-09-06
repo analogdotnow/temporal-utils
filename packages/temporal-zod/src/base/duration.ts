@@ -16,5 +16,7 @@ export const zDuration: ZodTemporal<typeof Duration> = validators.coerce;
 /**
  * Validates that the value is an instance of {@link Temporal.Duration}.
  */
-export const zDurationInstance: z.ZodType<Temporal.Duration> =
-  validators.instance;
+export const zDurationInstance: z.ZodType<
+  Temporal.Duration,
+  Temporal.Duration
+> = validators.instance;

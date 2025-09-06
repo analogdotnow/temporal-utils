@@ -26,7 +26,10 @@ export function temporalValidators<
   },
 >(
   cls: TClass,
-): { coerce: ZodTemporal<TClass>; instance: z.ZodType<InstanceType<TClass>> } {
+): {
+  coerce: ZodTemporal<TClass>;
+  instance: z.ZodType<InstanceType<TClass>, InstanceType<TClass>>;
+} {
   const instance = z.instanceof(cls);
   return {
     instance,
